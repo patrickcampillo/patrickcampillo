@@ -11,7 +11,7 @@ typora-root-url: ../
 
 Comenzando con esta práctica, vamos a conocer uno de los ataques más utilizados contra servidores web, el **XSS**. Para esto comenzaremos utilizando una página básica con el nombre `post.php` que contendrá lo siguiente:
 
-```php+HTML
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +57,7 @@ Habremos realizado un ataque XSS simple, pero efectivo.
 
 Para poder parar estos ataques en el servidor podemos hacer uso de las funciones `htmlspecialchars` o `htmlentities`, o utilizar algún purificador que detecte estos caracteres o textos peligrosos. Por lo que, ahora, vamos a crear otro archivo, llamado `post_mejorado.php`, que mediante una de las funciones mencionadas antes, mostrará el texto incluya el carácter que incluya.
 
-```php+HTML
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -195,7 +195,7 @@ file_put_contents($fichero, $session_robada, FILE_APPEND);
 
 Y por otro lado, crearemos una segunda página llamada `hackeada.php`, en otro contenedor **Docker**,  que realizará la función de servidor web "**seguro**" y escuchará en el puerto **8086**. Esta página contendrá lo siguiente:
 
-```php+HTML
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -288,7 +288,7 @@ De esta forma, al intentar realizar el ataque anterior, el servidor **evil**, no
 
 La mayoría de organizaciones, utilizan el principio de mínimo privilegio. El cual, indica que cada usuario solo debe ser capaz de acceder a la información y recursos necesarios para su desempeño legítimo. Por lo que, a continuación, realizaremos algunas modificaciones a nuestra página `login.php`, y crearemos una nueva página llamada `autenticacion.php`. Esta, además de permitir inicializar la sesión a los usuarios, les asignará un rol dependiendo del usuario que sea.
 
-```php+HTML
+```php
   
 <?php
 session_start();
@@ -337,7 +337,7 @@ if ($ya_registrado){
 
 Además, crearemos una página diferente dependiendo de que usuario acceda a la aplicación web. Si eres un usuario normal accederás a `perfil.php`.
 
-```php+HTML
+```php
 <?php
 session_start();
 if (!$_SESSION['ya_registrado']){
@@ -354,7 +354,7 @@ if ($_SESSION['ROL'] != "USER"){
 
 Si eres el administrador accederás a `admin.php`.
 
-```php+HTML
+```php
 <?php
 session_start();
 if (!$_SESSION['ya_registrado']){
@@ -371,7 +371,7 @@ if ($_SESSION['ROL'] != "ADMIN"){
 
  Y si  en algún momento, algún usuario intentara acceder a alguna parte a la que no tiene acceso, se le reenviaría a `no-autorizado.php`.
 
-```php+HTML
+```php
 <?php
 session_start();
 ?>
@@ -418,7 +418,7 @@ file_put_contents($fichero, $BD, FILE_APPEND);
 
 Y este código, es el que representa la página `hackeada-csrf.html`:
 
-```php+HTML
+```html
 Esta es una página que ha sido hackeada mediante XSS.
 Al acceder, realiza una transferencia de 1000 € al atacante.
 <img src='http://localhost/transfer.php?quantity=1000&to=juan'>
@@ -440,7 +440,7 @@ La cual se muestra a **Mario** de la siguiente forma cuando accede a su página 
 
 Por último, veremos otro tipo de ataque **XSS**, el cual realiza una redirección a una web controlada por el atacante, pero que visualmente, esta representada igual que la real. Por ejemplo si creamos la siguiente página, llamada `hackeada-redirect.html`:
 
-```php+HTML
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -457,7 +457,7 @@ Al acceder, reenvía al visitante a una página controlada por un hacker
 
 Cuando el usuario acceda a ella, se le redirigirá a la página `clon-de-mi-banco.html`, controlada por el servidor web **evil**.
 
-```php+HTML
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
