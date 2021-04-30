@@ -4,7 +4,7 @@ layout: post
 author: Patrick Campillo
 excerpt_separator: <!--more-->
 typora-copy-images-to: ../images/
-typora-root-url: ../
+typora-root-url: ../../
 ---
 
 ## Seguridad Host
