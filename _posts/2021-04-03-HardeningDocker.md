@@ -3,7 +3,7 @@ title: Hardening Docker
 layout: post
 author: Patrick Campillo
 excerpt_separator: <!--more-->
-typora-copy-images-to: ../images/hardendocker/
+typora-copy-images-to: ../images/
 typora-root-url: ../
 ---
 
@@ -11,7 +11,7 @@ typora-root-url: ../
 
 Para comenzar a utilizar Docker, es recomendable, ya sea por comodidad y seguridad. Poder ejecutar sus comandos sin necesidad de tener permisos de administrador. Por lo que, deberemos utilizar los 2 siguientes comandos: 
 
-![](images/1.png)
+![](/images/1.png)
 
 
 
