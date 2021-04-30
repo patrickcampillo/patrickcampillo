@@ -3,8 +3,8 @@ title: Hardening Docker
 layout: post
 author: Patrick Campillo
 excerpt_separator: <!--more-->
-typora-copy-images-to: ../images/hardendocker/
-typora-root-url: ../../
+typora-copy-images-to: /patrickcampillo/images/hardendocker/
+typora-root-url: ../
 ---
 
 ## Seguridad Host
