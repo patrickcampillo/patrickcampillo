@@ -3,17 +3,17 @@ title: Configuración de Apache
 layout: post
 author: Patrick Campillo
 excerpt_separator: <!--more-->
-typora-copy-images-to: ../images/
-typora-root-url: ../
+typora-copy-images-to: ../assets/img/confapache/
+typora-root-url: ../..
 ---
 
 ## TAREA 1
 
 #### <u>Directorios Sites-available y Sites-enabled</u>
 
-![](/images/confapache/1.PNG)
+![](/patrickcampillo/assets/img/confapache/1.PNG)
 
-![](/images/confapache/2.PNG)
+![](/patrickcampillo/assets/img/confapache/2.PNG)
 
 
 
@@ -21,7 +21,7 @@ typora-root-url: ../
 
 #### <u>Directorio del Document-Root</u>
 
-![](/images/confapache/3.PNG)
+![](/patrickcampillo/assets/img/confapache/3.PNG)
 
 
 
@@ -29,9 +29,9 @@ typora-root-url: ../
 
 #### <u>Configuración de los hosts virtuales</u>
 
-![](/images/confapache/4.PNG)
+![](/patrickcampillo/assets/img/confapache/4.PNG)
 
-![](/images/confapache/5.PNG)
+![](/patrickcampillo/assets/img/confapache/5.PNG)
 
 
 
@@ -39,7 +39,7 @@ typora-root-url: ../
 
 #### <u>Fichero /etc/hosts</u>
 
-![](/images/confapache/6.PNG)
+![](/patrickcampillo/assets/img/confapache/6.PNG)
 
 
 
@@ -47,7 +47,7 @@ typora-root-url: ../
 
 #### <u>Comprobación web</u>
 
-![](/images/confapache/7.PNG)
+![](/patrickcampillo/assets/img/confapache/7.PNG)
 
 
 
@@ -59,7 +59,7 @@ typora-root-url: ../
 
 #### <u>Archivo de configuración con Alias</u>
 
-![](/images/confapache/8.PNG)
+![](/patrickcampillo/assets/img/confapache/8.PNG)
 
 
 
@@ -67,7 +67,7 @@ typora-root-url: ../
 
 #### <u>Comprobación del Alias</u>
 
-![](/images/confapache/9.PNG)
+![](/patrickcampillo/assets/img/confapache/9.PNG)
 
 
 
@@ -79,7 +79,7 @@ typora-root-url: ../
 
 #### <u>Fichero de configuración con Redirect</u>
 
-![](/images/confapache/10.PNG)
+![](/patrickcampillo/assets/img/confapache/10.PNG)
 
 
 
@@ -87,7 +87,7 @@ typora-root-url: ../
 
 #### <u>Comprobación Redirect</u>
 
-![](/images/confapache/11.PNG)
+![](/patrickcampillo/assets/img/confapache/11.PNG)
 
 
 
@@ -99,6 +99,6 @@ typora-root-url: ../
 
 #### <u>Fichero de configuración con error personalizado</u>
 
-![](/images/confapache/12.PNG)
+![](/patrickcampillo/assets/img/confapache/12.PNG)
 
-![](/images/confapache/13.PNG)
+![](/patrickcampillo/assets/img/confapache/13.PNG)

