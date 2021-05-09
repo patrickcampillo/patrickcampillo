@@ -5,7 +5,7 @@ author: Patrick Campillo
 excerpt_separator: <!--more-->
 ---
 
-## Imagen Docker
+## Dockerfile
 
 El siguiente código representa un `Dockerfile`, con el cual "buildeamos" una imagen de `nginx` con `ModSecurity`. Además contiene algunas configuraciones que hacen que `nginx` sea más seguro. En los puntos siguientes explicaré parte por parte este `Dockerfile`.
 
