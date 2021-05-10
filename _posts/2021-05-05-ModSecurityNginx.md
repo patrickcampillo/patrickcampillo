@@ -78,10 +78,6 @@ RUN chmod 400 /etc/nginx/ssl/ssl-cert-snakeoil.key \
 CMD service php7.3-fpm start && nginx -g "daemon off;"
 ```
 
-<br>
-
-<br>
-
 ## Imagen builder
 
 En las primeras líneas, partimos de una imagen `Debian`,  en la cual realizaremos una instalación de todos los complementos necesarios para poner en funcionamiento la herramienta `ModSecurity` en `Nginx`. Para esto, a parte de utilizar paquetes oficiales, utilizaremos utilidades externas, la gran mayoría provenientes de `Github`. Y para reducir la cantidad de código del `Dockerfile`, este último paso lo realizaremos en un script de `bash`. El cual ejecutaremos una vez se finalice toda la instalación de los paquetes oficiales.
