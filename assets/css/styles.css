@@ -205,6 +205,7 @@ line-height: 1.2;
 border-bottom: 1px solid rgb(238, 238, 238);
 }
 h2 {
+margin-top: 2rem;
 padding-bottom: 0.3em;
 font-size: 1.75em;
 line-height: 1.225;
@@ -434,7 +435,4 @@ span.hit{
   padding: 4px;
   margin-left: 4px;
   margin-right: 4px;
-}
-h1 {
-  margin-top: 18px;
 }
