@@ -78,7 +78,9 @@ RUN chmod 400 /etc/nginx/ssl/ssl-cert-snakeoil.key \
 CMD service php7.3-fpm start && nginx -g "daemon off;"
 ```
 
+<br>
 
+<br>
 
 ## Imagen builder
 
