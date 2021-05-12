@@ -9,7 +9,7 @@ typora-root-url: ../../
 
 ## Dockerfile
 
-En esta práctica vamos a realizar la instalación de un servidor web `Apache` pero utilizando el módulo `mod_evasive`. Este módulo permite evitar ataques de denegación de servicio (`DoS`), realizando un escaneo constante de las conexiones entrantes. Si estas conexiones, superan el umbral establecida las baneara y ya no podrán acceder.
+En esta práctica vamos a realizar la instalación de un servidor web `Apache`, pero utilizando el módulo `mod_evasive`. Este módulo permite evitar ataques de denegación de servicio (`DoS`), realizando un escaneo constante de las conexiones entrantes. Si estas conexiones superan el umbral establecido las baneara y ya no podrán acceder.
 
 ```dockerfile
 # we will inherit from  the Debian image on DockerHub
@@ -42,7 +42,7 @@ CMD  ["./entrypoint.sh"]
 
 
 
-Utilizando la imagen base `Debian`, realizaremos una actualización e instalación de los paquetes necesarios para realizar la práctica. Estableceremos el directorio por defecto y copiaremos en el el `entrypoint.sh`. Finalmente copiaremos el fichero configuración `evasive.conf`, que contiene los párametros que configuran el módulo, reiniciamos apache y ejecutamos el `enrypoint.sh`, que eejcutará `Apache` en primer plano.
+Utilizando la imagen base `Debian`, realizaremos una actualización e instalación de los paquetes necesarios para realizar la práctica. Estableceremos el directorio por defecto y copiaremos en el el `entrypoint.sh`. Finalmente copiaremos el fichero configuración `evasive.conf`, que contiene los parámetros que configuran el módulo, reiniciamos apache y ejecutamos el `entrypoint.sh`, que ejcutará `Apache` en primer plano.
 
 
 
@@ -64,13 +64,13 @@ Utilizando la imagen base `Debian`, realizaremos una actualización e instalaci�
 </IfModule>
 ```
 
-Este es el fichero en el que configuramos la cantidad de conexiones, el intervalo entre estas, y el tiempo de bloqieo. Este fichero se copiará al directorio por defecto, de `Apache`, que almacena los módulos.
+Este es el fichero en el que configuramos la cantidad de conexiones, el intervalo entre estas, y el tiempo de bloqueo. Este fichero se copiará al directorio por defecto, de `Apache`, que almacena los módulos.
 
 
 
 ## Informe de Apache Bench
 
-El propio `Apache`, dispone de una herramienta para realizar pruebas de rendimiento de nuestro servidor. Esta herrameienta se llama `Apache Bench`, y la podemos utilizar mediante el comando `ab`, seguido del número de intentos y repeticiones.
+El propio `Apache`, dispone de una herramienta para realizar pruebas de rendimiento de nuestro servidor. Esta herramienta se llama `Apache Bench`, y la podemos utilizar mediante el comando `ab`, seguido del número de intentos y repeticiones.
 
 ![](/patrickcampillo/assets/img/evasive_apache/1.png)
 
@@ -84,4 +84,4 @@ Pudiendo obtener el informe del rendimiento de nuestro servidor web. Además si 
 
 ## GitHub
 
-Finalmente, dejo un repositorio de `GitHub`, con el `Dockerfile` y todos sus ficheros de configuración para poder "buildear" la imagen. Así como el fichero error.log, donde se puede comprobar como funciona este módulo.
+Finalmente, dejo un repositorio de `GitHub`, con el `Dockerfile` y todos sus ficheros de configuración para poder "buildear" la imagen. Así como el fichero error.log, donde se puede comprobar cómo funciona este módulo.
